@@ -1641,48 +1641,235 @@
     /* ============================================================
        MOBILE RESPONSIVE
     ============================================================ */
+    /* ============================================================
+       FOOTER CLASSES (replaces inline styles)
+    ============================================================ */
+    .site-footer { display: block; padding: 0; }
+
+    .footer-top-inner {
+      border-top: 1px solid var(--border);
+      padding: 70px 48px 50px;
+      background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(56,189,248,0.04) 0%, transparent 70%);
+    }
+
+    .footer-top-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 60px;
+    }
+
+    .footer-logo    { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.2em; background: linear-gradient(135deg, var(--blue), var(--violet)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+    .footer-tagline { font-size: 0.85rem; line-height: 1.8; color: var(--text-muted); max-width: 240px; margin-bottom: 24px; }
+
+    .footer-socials { display: flex; gap: 12px; flex-wrap: wrap; }
+    .fsoc {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; text-decoration: none; color: var(--text-muted);
+      transition: all .3s;
+    }
+    .fsoc:hover { border-color: rgba(56,189,248,0.3); color: var(--blue); }
+
+    .footer-col { display: flex; flex-direction: column; gap: 12px; }
+    .footer-col-title { font-family: 'Syne', sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; }
+    .footer-col-link  { font-size: 0.85rem; color: var(--text-muted); text-decoration: none; transition: color .3s; font-family: 'Syne', sans-serif; }
+    .footer-col-link:hover { color: var(--blue); }
+    .footer-col-text  { font-size: 0.85rem; color: var(--text-muted); font-family: 'Syne', sans-serif; }
+    .footer-email     { word-break: break-all; font-size: 0.78rem !important; }
+
+    .footer-available {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Syne', sans-serif; font-size: 0.7rem;
+      color: #4ade80; letter-spacing: 0.1em; margin-top: 4px;
+    }
+    .footer-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #4ade80; box-shadow: 0 0 8px #4ade80;
+      display: inline-block; animation: statusPulse 2s ease-in-out infinite;
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border);
+      padding: 22px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-copy-text { font-size: 0.75rem; color: rgba(248,250,252,0.3); font-family: 'Syne', sans-serif; letter-spacing: 0.04em; }
+    .footer-top-link  { font-family: 'Syne', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color .3s; white-space: nowrap; }
+    .footer-top-link:hover { color: var(--blue); }
+
+    /* ============================================================
+       TABLET — max 900px
+    ============================================================ */
     @media (max-width: 900px) {
-      section { padding: 90px 24px; }
-      #nav { padding: 18px 24px; }
-      #nav.scrolled { padding: 14px 24px; }
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      .hamburger { display: flex; }
 
-      .about-grid { grid-template-columns: 1fr; gap: 60px; }
-      .timeline-layout { grid-template-columns: 1fr; }
-      .tl-sticky { position: static; }
-      .skills-2col { grid-template-columns: 1fr; }
+      /* --- Global --- */
+      section { padding: 80px 20px; }
+      .wrap   { padding: 0; }
 
-      .proj-grid { grid-template-columns: 1fr; }
-      .pc-1, .pc-2, .pc-3, .pc-4 { grid-column: span 1; }
+      /* --- Nav --- */
+      #nav         { padding: 16px 20px; }
+      #nav.scrolled{ padding: 12px 20px; }
+      .nav-links   { display: none; }
+      .nav-cta     { display: none; }
+      .hamburger   { display: flex; }
 
-      .contact-layout { grid-template-columns: 1fr; gap: 48px; }
-      .form-row { grid-template-columns: 1fr; }
-
-      .stats-inner { grid-template-columns: 1fr 1fr; }
-      .stat-block + .stat-block { border-left: none; border-top: 1px solid var(--border); }
-      .stat-block:nth-child(2) { border-left: 1px solid var(--border); border-top: none; }
-
-      footer { flex-direction: column; gap: 20px; text-align: center; }
-      .footer-links { justify-content: center; }
-
-      #cursor-dot, #cursor-ring, #cursor-glow { display: none; }
+      /* --- Cursor off --- */
+      #cursor-dot, #cursor-ring, #cursor-glow { display: none !important; }
       body { cursor: auto; }
 
-      .hero-actions { flex-direction: column; align-items: center; }
-      .profile-vis { max-width: 320px; }
+      /* --- Hero --- */
+      #hero { padding: 100px 20px 70px; text-align: center; }
+      .hero-inner { max-width: 100%; }
+      .hero-desc  { font-size: 0.9rem; max-width: 100%; }
+      .hero-actions { flex-direction: column; align-items: center; gap: 12px; }
+      .hero-actions .btn { width: 100%; max-width: 300px; justify-content: center; }
+      .hero-badges { display: none; }
+      .hero-scroll { display: none; }
+
+      /* --- Stats band --- */
+      #stats-band .stats-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+      .stat-block { padding: 36px 20px; }
+      .stat-num   { font-size: 3.5rem; }
+      /* reset borders for 2-col grid */
+      .stat-block + .stat-block { border-left: none; border-top: 1px solid var(--border); }
+      .stat-block:nth-child(2)  { border-left: 1px solid var(--border) !important; border-top: none !important; }
+      .stat-block:nth-child(3)  { border-top: 1px solid var(--border) !important; }
+      .stat-block:nth-child(4)  { border-top: 1px solid var(--border) !important; border-left: 1px solid var(--border) !important; }
+
+      /* --- About --- */
+      .about-grid { grid-template-columns: 1fr; gap: 50px; }
+      .profile-vis { max-width: 260px; margin: 0 auto; }
       .pb-1, .pb-2 { display: none; }
+      .about-body p { font-size: 0.9rem; }
+
+      /* --- Experience --- */
+      .timeline-layout { grid-template-columns: 1fr; gap: 48px; }
+      .tl-sticky { position: static; margin-bottom: 0; }
+      .section-sub { margin-bottom: 32px; }
+      .timeline { padding-left: 24px; }
+      .tl-dot   { left: -30px; }
+      .tl-card  { padding: 20px; }
+
+      /* --- Skills --- */
+      .skills-2col { grid-template-columns: 1fr; }
+      .skill-panel { padding: 28px 24px; }
+      .tech-mosaic { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; }
+
+      /* --- Services --- */
+      .services-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .svc-card { padding: 28px 24px 24px; }
+      .svc-icon { width: 44px; height: 44px; font-size: 1.1rem; margin-bottom: 16px; }
+      .svc-title { font-size: 0.95rem; }
+      .svc-desc  { font-size: 0.82rem; }
+      .svc-bg-num { font-size: 4rem; }
+
+      /* --- Certifications --- */
+      .certifications-layout {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+      }
+      .cert-row { padding: 20px; gap: 16px; }
+      .cert-name { font-size: 0.88rem; }
+
+      /* --- Projects --- */
+      .proj-grid { grid-template-columns: 1fr; gap: 16px; }
+      .pc-1, .pc-2, .pc-3, .pc-4 { grid-column: span 1; }
+      .proj-card { padding: 28px 24px; }
+      .proj-num  { font-size: 2rem; margin-bottom: 14px; }
+
+      /* --- Testimonials --- */
+      .tcard { width: 290px; padding: 26px; }
+      .tcard-text { font-size: 0.82rem; }
+
+      /* --- Contact --- */
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-wrap { padding: 28px 22px; }
+      .c-item { padding: 14px 16px; }
+
+      /* --- Footer grid → stack --- */
+      .footer-top-inner { padding: 50px 20px 40px; }
+      .footer-top-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .footer-brand-col { grid-column: 1 / -1; }
+      .footer-bottom-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 18px 20px;
+      }
     }
 
+    /* ============================================================
+       MOBILE — max 480px
+    ============================================================ */
     @media (max-width: 480px) {
-      .stats-inner { grid-template-columns: 1fr 1fr; }
-      .hero-badges { display: none; }
-      .section-h { font-size: 2rem; }
-      .form-wrap { padding: 28px 24px; }
-    }
-    @media (max-width: 900px) {
-      .certifications-layout { grid-template-columns: 1fr !important; gap: 48px !important; }
+
+      /* --- Global --- */
+      section { padding: 70px 16px; }
+      .section-h { font-size: 1.9rem !important; }
+      .eyebrow    { font-size: 0.62rem; }
+
+      /* --- Hero --- */
+      #hero { padding: 90px 16px 60px; }
+      .hero-status { font-size: 0.62rem; padding: 7px 16px; }
+      .hero-desc { font-size: 0.85rem; line-height: 1.75; }
+      .hero-role-wrap { font-size: 0.9rem; }
+
+      /* --- Stats --- */
+      #stats-band .stats-inner { grid-template-columns: 1fr 1fr; }
+      .stat-block { padding: 28px 12px; }
+      .stat-num   { font-size: 3rem; }
+      .stat-label { font-size: 0.62rem; }
+
+      /* --- About tags --- */
+      .about-tags { gap: 6px; }
+      .atag { font-size: 0.68rem; padding: 6px 12px; }
+
+      /* --- Services: single column on very small --- */
+      .services-grid { grid-template-columns: 1fr; }
+
+      /* --- Timeline --- */
+      .tl-role { font-size: 1rem; }
+      .timeline { padding-left: 20px; }
+      .tl-dot   { left: -26px; width: 10px; height: 10px; }
+      .tl-list li { font-size: 0.82rem; }
+
+      /* --- Tech mosaic --- */
+      .tech-mosaic { grid-template-columns: repeat(3, 1fr); }
+      .tp { font-size: 0.68rem; padding: 12px 10px; }
+
+      /* --- Projects --- */
+      .proj-card { padding: 24px 18px; border-radius: 14px; }
+      .proj-arrow { top: 20px; right: 20px; width: 32px; height: 32px; font-size: 0.85rem; }
+      .proj-stack { gap: 6px; }
+      .ps-tag { font-size: 0.62rem; }
+
+      /* --- Testimonials --- */
+      .tcard { width: 260px; padding: 22px; }
+
+      /* --- Cert --- */
+      .cert-row { flex-wrap: wrap; gap: 12px; }
+      .cert-badge { align-self: flex-start; }
+
+      /* --- Contact --- */
+      .finput, .ftextarea { font-size: 0.875rem; padding: 11px 14px; }
+      .c-info-val { font-size: 0.82rem; }
+
+      /* --- Footer --- */
+      .footer-top-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+      }
+      .footer-top-inner { padding: 50px 16px 40px !important; }
     }
   </style>
 </head>
@@ -2449,73 +2636,53 @@
 <!-- ============================================================
      FOOTER
 ============================================================ -->
-<footer style="display:block; padding:0;">
-  <!-- Footer top band -->
-  <div style="border-top:1px solid var(--border); padding:70px 48px 50px; background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(56,189,248,0.04) 0%, transparent 70%);">
-    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:60px;">
+<footer class="site-footer">
+  <div class="footer-top-inner">
+    <div class="footer-top-grid">
 
-      <!-- Brand col -->
-      <div>
-        <div class="footer-logo" style="margin-bottom:16px;">M.GAMAL</div>
-        <p style="font-size:0.85rem; line-height:1.8; color:var(--text-muted); max-width:240px; margin-bottom:24px;">
-          Front-End Developer &amp; UI Designer based in Tanta, Egypt. Building the web, one pixel at a time.
-        </p>
-        <div style="display:flex; gap:12px;">
-          <a href="mailto:mohamedgamalelg27@gmail.com" style="width:38px;height:38px;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;text-decoration:none;color:var(--text-muted);transition:all .3s;" onmouseenter="this.style.borderColor='rgba(56,189,248,0.3)';this.style.color='var(--blue)'" onmouseleave="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">✉️</a>
-          <a href="https://github.com/MohamedGamal" target="_blank" style="width:38px;height:38px;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;text-decoration:none;color:var(--text-muted);transition:all .3s;" onmouseenter="this.style.borderColor='rgba(56,189,248,0.3)';this.style.color='var(--blue)'" onmouseleave="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">⌨️</a>
-          <a href="tel:+201028448495" style="width:38px;height:38px;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;text-decoration:none;color:var(--text-muted);transition:all .3s;" onmouseenter="this.style.borderColor='rgba(56,189,248,0.3)';this.style.color='var(--blue)'" onmouseleave="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">📞</a>
+      <div class="footer-brand-col">
+        <div class="footer-logo">M.GAMAL</div>
+        <p class="footer-tagline">Front-End Developer &amp; UI Designer based in Tanta, Egypt. Building the web, one pixel at a time.</p>
+        <div class="footer-socials">
+          <a href="mailto:mohamedgamalelg27@gmail.com" class="fsoc" aria-label="Email">✉️</a>
+          <a href="https://github.com/MohamedGamal" target="_blank" class="fsoc" aria-label="GitHub">⌨️</a>
+          <a href="tel:+201028448495" class="fsoc" aria-label="Phone">📞</a>
         </div>
       </div>
 
-      <!-- Navigation -->
-      <div>
-        <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.25em;color:var(--text-muted);text-transform:uppercase;margin-bottom:20px;">Navigation</div>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <a href="#about" class="footer-links" style="font-size:0.85rem;color:var(--text-muted);text-decoration:none;transition:color .3s;font-family:'Syne',sans-serif;" onmouseenter="this.style.color='var(--blue)'" onmouseleave="this.style.color='var(--text-muted)'">About</a>
-          <a href="#experience" style="font-size:0.85rem;color:var(--text-muted);text-decoration:none;transition:color .3s;font-family:'Syne',sans-serif;" onmouseenter="this.style.color='var(--blue)'" onmouseleave="this.style.color='var(--text-muted)'">Experience</a>
-          <a href="#skills" style="font-size:0.85rem;color:var(--text-muted);text-decoration:none;transition:color .3s;font-family:'Syne',sans-serif;" onmouseenter="this.style.color='var(--blue)'" onmouseleave="this.style.color='var(--text-muted)'">Skills</a>
-          <a href="#projects" style="font-size:0.85rem;color:var(--text-muted);text-decoration:none;transition:color .3s;font-family:'Syne',sans-serif;" onmouseenter="this.style.color='var(--blue)'" onmouseleave="this.style.color='var(--text-muted)'">Projects</a>
-        </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Navigation</div>
+        <a href="#about" class="footer-col-link">About</a>
+        <a href="#experience" class="footer-col-link">Experience</a>
+        <a href="#skills" class="footer-col-link">Skills</a>
+        <a href="#projects" class="footer-col-link">Projects</a>
+        <a href="#contact" class="footer-col-link">Contact</a>
       </div>
 
-      <!-- Services -->
-      <div>
-        <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.25em;color:var(--text-muted);text-transform:uppercase;margin-bottom:20px;">Services</div>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <span style="font-size:0.85rem;color:var(--text-muted);font-family:'Syne',sans-serif;">Front-End Dev</span>
-          <span style="font-size:0.85rem;color:var(--text-muted);font-family:'Syne',sans-serif;">UI/UX Design</span>
-          <span style="font-size:0.85rem;color:var(--text-muted);font-family:'Syne',sans-serif;">API Integration</span>
-          <span style="font-size:0.85rem;color:var(--text-muted);font-family:'Syne',sans-serif;">Performance Opt.</span>
-        </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <span class="footer-col-text">Front-End Dev</span>
+        <span class="footer-col-text">UI/UX Design</span>
+        <span class="footer-col-text">API Integration</span>
+        <span class="footer-col-text">Performance Opt.</span>
       </div>
 
-      <!-- Contact info -->
-      <div>
-        <div style="font-family:'Syne',sans-serif;font-size:0.65rem;letter-spacing:0.25em;color:var(--text-muted);text-transform:uppercase;margin-bottom:20px;">Contact</div>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <span style="font-size:0.82rem;color:var(--text-muted);font-family:'DM Sans',sans-serif;">mohamedgamalelg27@gmail.com</span>
-          <span style="font-size:0.82rem;color:var(--text-muted);font-family:'DM Sans',sans-serif;">+20 10 284 48495</span>
-          <span style="font-size:0.82rem;color:var(--text-muted);font-family:'DM Sans',sans-serif;">Tanta, Egypt 🇪🇬</span>
-          <div style="margin-top:6px;">
-            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-size:0.7rem;color:#4ade80;letter-spacing:0.1em;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;display:inline-block;"></span>
-              Available for work
-            </span>
-          </div>
-        </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <span class="footer-col-text footer-email">mohamedgamalelg27@gmail.com</span>
+        <span class="footer-col-text">+20 10 284 48495</span>
+        <span class="footer-col-text">Tanta, Egypt 🇪🇬</span>
+        <span class="footer-available">
+          <span class="footer-dot"></span>Available for work
+        </span>
       </div>
 
     </div>
   </div>
 
-  <!-- Footer bottom bar -->
-  <div style="border-top:1px solid var(--border); padding:22px 48px; display:flex; align-items:center; justify-content:space-between; max-width:100%;">
-    <div style="font-size:0.75rem; color:rgba(248,250,252,0.3); font-family:'Syne',sans-serif; letter-spacing:0.04em;">
-      © 2025 Mohamed Gamal Al-Gendy · Built with ❤️ in Tanta, Egypt
-    </div>
-    <a href="#hero" style="font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:0.1em;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;" onmouseenter="this.style.color='var(--blue)'" onmouseleave="this.style.color='var(--text-muted)'">
-      Back to top ↑
-    </a>
+  <div class="footer-bottom-bar">
+    <div class="footer-copy-text">© 2025 Mohamed Gamal Al-Gendy · Built with ❤️ in Tanta, Egypt</div>
+    <a href="#hero" class="footer-top-link">Back to top ↑</a>
   </div>
 </footer>
 
@@ -2680,9 +2847,10 @@
 })();
 
 /* ======================================================
-   HERO PARALLAX
+   HERO PARALLAX — desktop only
 ====================================================== */
 (function(){
+  if(window.innerWidth < 900) return;
   const inner = document.getElementById('heroInner');
   window.addEventListener('scroll', () => {
     const s = window.scrollY;
@@ -2874,9 +3042,10 @@ function handleSend(){
 })();
 
 /* ======================================================
-   SUBTLE SECTION BACKGROUND PARALLAX ON ORBs
+   SUBTLE SECTION BACKGROUND PARALLAX ON ORBs — desktop only
 ====================================================== */
 window.addEventListener('scroll', ()=>{
+  if(window.innerWidth < 900) return;
   const s = window.scrollY;
   document.querySelector('.orb-a').style.transform = `translateY(${s*0.08}px)`;
   document.querySelector('.orb-b').style.transform = `translateY(${-s*0.05}px)`;
